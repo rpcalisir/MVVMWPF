@@ -27,5 +27,10 @@ namespace WPFUI.Models
         {
             return HashCode.Combine(RoomNumber, FloorNumber);
         }
+
+        public override string ToString()
+        {
+            return RoomNumber.ToString() + "," + FloorNumber.ToString();
+        }
     }
 }
