@@ -21,6 +21,11 @@ namespace WPFUI.Models
             return _reservations.Where(r => r.UserName == userName);
         }
 
+        /// <summary>
+        /// Adds a new reservation into Reservation Book
+        /// </summary>
+        /// <param name="reservation"></param>
+        /// <exception cref="ReservationConflictsException"></exception>
         public void AddReservation(Reservation reservation)
         {
             foreach (Reservation existingReservation in _reservations)

@@ -22,6 +22,11 @@ namespace WPFUI.Models
             return _reservationBook.GetReservationsForUser(userName);
         }
 
+        /// <summary>
+        /// Adds a new reservation into Reservation Book
+        /// </summary>
+        /// <param name="reservation"></param>
+        /// <exception cref="ReservationConflictsException"></exception>
         public void MakeReservation(Reservation reservation)
         {
             _reservationBook.AddReservation(reservation);

@@ -8,6 +8,6 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid Margin="20 10" MaxWidth="600">
-        <views:ShowReservationsView DataContext="{Binding SelectedViewModel}"/>
+        <views:MakeReservationView DataContext="{Binding SelectedViewModel}"/>
     </Grid>
 </Window>

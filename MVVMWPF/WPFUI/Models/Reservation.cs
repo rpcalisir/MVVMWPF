@@ -24,12 +24,13 @@ namespace WPFUI.Models
 
         public bool Conflicts(Reservation reservation)
         {
-            if (!reservation.RoomId.Equals(RoomId))
+            if (reservation.RoomId == RoomId)
             {
-                return false;
+                return true;
             }
 
-            return reservation.StartDate < EndDate || reservation.EndDate > StartDate;
+            bool result = reservation.StartDate < EndDate && reservation.EndDate > StartDate;
+            return result;
         }
     }
 }
