@@ -4,6 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
+using WPFUI.Commands;
+using WPFUI.Models;
 
 namespace WPFUI.ViewModels
 {
@@ -16,10 +18,12 @@ namespace WPFUI.ViewModels
 			get { return _userName; }
 			set 
 			{
-				OnPropertyChanged(nameof(UserName));
-				_userName = value; 
-			}
-		}
+                //If OnPropertyChanged event subscriber method is called before setting the value, then UserName property will return null after something is typed in TextBox.
+                //OnPropertyChanged(nameof(UserName));
+				_userName = value;
+                OnPropertyChanged(nameof(UserName));
+            }
+        }
 
 		private int _floorNumber;
 
@@ -72,9 +76,9 @@ namespace WPFUI.ViewModels
 		public ICommand SubmitCommand { get; }
 		public ICommand CancelCommand { get; }
 
-		public MakeReservationViewModel()
+		public MakeReservationViewModel(Hotel hotel)
 		{
-
+			SubmitCommand = new MakeReservationCommand(this, hotel); 
 		}
 
 	}

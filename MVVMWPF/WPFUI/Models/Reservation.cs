@@ -12,7 +12,7 @@ namespace WPFUI.Models
         public string UserName { get; }
 
         public DateTime StartDate { get; }
-        public DateTime EndDate { get; }
+        public DateTime EndDate { get; } 
         public TimeSpan Length => EndDate.Subtract(StartDate);
         public Reservation(RoomID roomId, string userName, DateTime startTime, DateTime endTime)
         {

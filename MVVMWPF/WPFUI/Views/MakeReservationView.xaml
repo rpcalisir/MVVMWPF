@@ -27,7 +27,8 @@
             </Grid.RowDefinitions>
 
             <TextBlock Grid.Row="0" Text="User Name"/>
-            <TextBox Grid.Row="1" Text="{Binding UserName}"/>
+            <!--The reason UpdateSourceTrigger is added here, whenever anything is typed into textbox, it immediately raises OnPropertyChanged event subscriber method inside of ViewModel property setter, thus PropertyChanged event is invoked.-->
+            <TextBox Grid.Row="1" Text="{Binding UserName, UpdateSourceTrigger=PropertyChanged}"/>
 
         </Grid>
 

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using WPFUI.Models;
 
 namespace WPFUI.ViewModels
 {
@@ -10,9 +11,9 @@ namespace WPFUI.ViewModels
     {
         public BaseViewModel SelectedViewModel { get; }
 
-        public MainViewModel()
+        public MainViewModel(Hotel hotel)
         {
-            SelectedViewModel = new ShowReservationsViewModel();
+            SelectedViewModel = new MakeReservationViewModel(hotel);
         }
     }
 }
